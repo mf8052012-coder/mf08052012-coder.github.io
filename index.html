@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema</title>
+  <style>
+    body {
+      background:#111;
+      color:#ccc;
+      font-family: monospace;
+      text-align:center;
+      padding-top:80px;
+    }
+
+    .menu p {
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    .menu p:hover {
+      color: #fff;
+    }
+
+    .secreto {
+      display: none;
+      margin-top: 25px;
+      color: #66aaff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .link12 {
+      display: none;
+      margin-top: 30px;
+      font-size: 20px;
+      color: #ff5555;
+      text-decoration: none;
+    }
+
+    .aviso {
+      font-size: 12px;
+      color: #666;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>SISTEMA DE ARQUIVOS</h2>
+<p>Acesso restrito</p>
+
+<div class="menu">
+  <p onclick="liberar01()">Arquivo 001</p>
+  <p>Arquivo 004</p>
+  <p>Arquivo 008</p>
+  <p>Arquivo 011</p>
+</div>
+
+<a id="arquivo01" class="secreto" href="arquivo01.html">
+  ► ACESSO LIBERADO: ARQUIVO 01 ◄
+</a>
+
+<a id="arquivo12" class="link12" href="arquivo12.html">
+  ► ARQUIVO 012 ◄
+</a>
+
+<p class="aviso">
+  Este site é uma obra de ficção.
+</p>
+
+<script>
+  function liberar01() {
+    document.getElementById("arquivo01").style.display = "block";
+  }
+
+  const link12 = document.getElementById("arquivo12");
+
+  setInterval(() => {
+    link12.style.display =
+      link12.style.display === "none" ? "block" : "none";
+  }, 12000); // 12 segundos
+</script>
+
+</body>
+</html>
