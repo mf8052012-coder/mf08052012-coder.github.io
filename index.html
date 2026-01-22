@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema</title>
+  <style>
+    body {
+      background:#111;
+      color:#ccc;
+      font-family: monospace;
+      text-align:center;
+      padding-top:80px;
+    }
+
+    .menu {
+      margin-top: 40px;
+      font-size: 18px;
+    }
+
+    .menu p {
+      margin: 10px 0;
+    }
+
+    .link12 {
+      display: none;
+      margin-top: 30px;
+      font-size: 20px;
+      color: #ff5555;
+      text-decoration: none;
+    }
+
+    .aviso {
+      font-size: 12px;
+      color: #666;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>SISTEMA DE ARQUIVOS</h2>
+<p>Acesso restrito</p>
+
+<div class="menu">
+  <p>Arquivo 001</p>
+  <p>Arquivo 004</p>
+  <p>Arquivo 008</p>
+  <p>Arquivo 011</p>
+</div>
+
+<a id="link12" class="link12" href="arquivo12.html">
+  ► ARQUIVO 012 ◄
+</a>
+
+<p class="aviso">
+  Este site é uma obra de ficção.
+</p>
+
+<script>
+  const link = document.getElementById("link12");
+
+  setInterval(() => {
+    if (link.style.display === "none") {
+      link.style.display = "block";
+    } else {
+      link.style.display = "none";
+    }
+  }, 12000); // 12 segundos
+</script>
+
+</body>
+                  </html>
