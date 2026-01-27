@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Arquivos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="container">
+
+  <h1>SISTEMA DE BUSCA</h1>
+  <p>Digite o nome do arquivo:</p>
+
+  <input type="text" id="busca" placeholder="ex: arquivo01">
+  <br><br>
+  <button onclick="procurar()">Pesquisar</button>
+
+  <div id="resultado"></div>
+
+</div>
+
+<script>
+function procurar() {
+  const texto = document.getElementById("busca").value
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .trim();
+
+  const r = document.getElementById("resultado");
+  r.innerHTML = "";
+
+  const arquivos = {
+    "arquivo01": "arquivo01.html",
+    "arquivo02": "arquivo02.html",
+    "arquivo03": "arquivo03.html",
+    "arquivo04": "arquivo04.html",
+    "arquivo05": "arquivo05.html",
+    "arquivo06": "arquivo06.html",
+    "arquivo07": "arquivo07.html",
+    "arquivo08": "arquivo08.html",
+    "arquivo09": "arquivo09.html",
+    "arquivo10": "arquivo10.html",
+    "arquivo11": "arquivo11.html"
+  };
+
+  // 🔓 Combinação → Arquivo 12
+  if (texto === "arquivo01+arquivo11") {
+    r.innerHTML = `
+      <p style="color:red;">PROTOCOLO 12 DESBLOQUEADO</p>
+      <a href="arquivo12.html">Acessar ARQUIVO 12</a>
+    `;
+  }
+
+  // 🔓 Combinação → Arquivo 13
+  else if (texto === "arquivo12+arquivo01") {
+    r.innerHTML = `
+      <p style="color:red;">SEQUÊNCIA FINAL DETECTADA</p>
+      <a href="arquivo13.html">Continuar</a>
+    `;
+  }
+
+  // 📂 Arquivos normais
+  else if (arquivos[texto]) {
+    r.innerHTML = `<a href="${arquivos[texto]}">Acessar ${texto.toUpperCase()}</a>`;
+  }
+
+  // 🚫 Bloqueio do arquivo 12 direto
+  else if (texto.includes("arquivo12")) {
+    r.innerHTML = `
+      <p style="color:red;">
+        ACESSO NEGADO<br>
+        ESTE ARQUIVO NÃO DEVE SER ACESSADO DIRETAMENTE
+      </p>
+    `;
+  }
+
+  else {
+    r.innerHTML = "<p>Arquivo não encontrado.</p>";
+  }
+}
+</script>
+
+</body>
+  </html>
